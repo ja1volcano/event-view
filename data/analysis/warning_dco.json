@@ -1,0 +1,6 @@
+{
+    "Invalid time fields doy" : "Time field is invalid - check GOES string for proper configuration",
+    "Spec says format B but numHours=":"Faild to decode data using Header V1 format",
+    "Bad msg field":"test",
+    "spec says new B format but message contains ASCII chars. Msg skipped.":"Failed to decode message - check raw GOES string (common cause: buffer empty message)"
+}

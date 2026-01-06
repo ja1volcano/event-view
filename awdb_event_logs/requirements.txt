@@ -1,0 +1,6 @@
+pandas
+sqlalchemy
+Flask-SQLAlchemy
+flask-restx
+pymssql
+python-dotenv

@@ -1,0 +1,34 @@
+
+Locations: https://bitbucket.fpac.usda.gov/projects/NRCSAPPS/repos/wcis_swststoragejava/browse/src/wcc/products/snotel/storage/datatransfer/lrgs/GoesDcpMessageDecoder.java
+
+Warning: "Invalid time fields doy" "hhmm="
+    ?needs to contain station dcpAddress? - double check
+
+Warning: "Message '" [dcpMsg.getHeader] "Spec says format B but numHours=" " and numChans=" " which are impossible values" + " -- will attempt format A."
+    ?instead of header can we get dcpAddress?
+
+Warning: "Bad msg field" [ex]
+    ?not sure what is contained in "ex" variable?
+
+Logger: "Bad message hour - missing time fields:" [dcpMsg.getData()]
+    ?does this contain DcpAddress?
+
+Logger: "cannot represent value as a number: " [e] " field='"  [dataField] + "'" [SKIPPED_MSG]
+    ?dcpAddress? ?in event?
+
+Error: "Invalid msg '" [dcpMsg.header] "' -- " + "spec says new B format but message contains ASCII chars. Msg skipped." 
+    ?instead of header can we get dcpAddress?
+
+Error: "Received message for " [dcpMsg.DcpAddress] " but address is not in the spec list"
+
+
+https://bitbucket.fpac.usda.gov/projects/NRCSAPPS/repos/wcis_swststoragejava/browse/src/wcc/products/snotel/storage/datatransfer/lrgs/LrgsGroupChannelInfoByChannel.java
+
+StorageUtil Exception: "Error in Lrgs -- The length of data is not correct"
+    ?should be able to associate telemetry type with this error?
+
+
+https://bitbucket.fpac.usda.gov/projects/NRCSAPPS/repos/wcis_swststoragejava/browse/src/wcc/products/snotel/storage/datatransfer/lrgs/LrgsCsvRecord.java
+
+"Values in GOES data do not exist: "
+

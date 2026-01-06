@@ -1,0 +1,22 @@
+[
+    {
+        "master_id": 18,
+        "master_nm": "Cellular",
+        "description": "Cellular Modem"
+    },
+    {
+        "master_id": 19,
+        "master_nm": "Recovered",
+        "description": "Recovered from SocketShare or Remote Site data log"
+    },
+    {
+        "master_id": 20,
+        "master_nm": "GOES",
+        "description": "OpenDCS GOES Satellite"
+    },
+    {
+        "master_id": 21,
+        "master_nm": "Iridium",
+        "description": "Iridium Satellite via OpenDCS"
+    }
+]

@@ -1,0 +1,117 @@
+[
+    {
+        "sntl_event_key": 1,
+        "event_name": "DATA_SYSTEM_FAILURE",
+        "description_of_event": "The database is in a state where it can no longer accept data if: 1. Application receives a SQL Server error with a Severity Level of 17 or higher. 2. Application fails to connect to the database. 3. Transaction fails with a timeout. These events can be corrected by Infrastructure support."
+    },
+    {
+        "sntl_event_key": 2,
+        "event_name": "NON_FATAL_TRANSACTION_FAILURE",
+        "description_of_event": "A transaction failed, but without impacting other transactions.  For instance: 1. Transaction violated a table constraint. 2. Transaction was selected for termination in a resource locking conflict. These events should be examined by a data manager."
+    },
+    {
+        "sntl_event_key": 3,
+        "event_name": "TRANSACTION_TAKES_TOO_LONG_TO_COMPLETE",
+        "description_of_event": "Resources could be under heavy load.  Or network traffic is high. These events should be examined by a data manager."
+    },
+    {
+        "sntl_event_key": 4,
+        "event_name": "PARSE_FAILURE",
+        "description_of_event": "The input record does not conform to the parsing format and therefore cannot be decoded."
+    },
+    {
+        "sntl_event_key": 5,
+        "event_name": "TIME_OUT_OF_RANGE_DATA",
+        "description_of_event": "The timestamp difference between the sampled time and the reported time exceeds the programmed limit. Keep current limits. Allow limits to be configurable per master stn."
+    },
+    {
+        "sntl_event_key": 6,
+        "event_name": "NO_CONNECTION_TO_MASTER",
+        "description_of_event": "Storage detects no connection to Master (datasource)"
+    },
+    {
+        "sntl_event_key": 7,
+        "event_name": "MASTER_NO_NEW_DATA",
+        "description_of_event": "Failure to receive new data from a Master Station for more than the programmed limit-1 hour."
+    },
+    {
+        "sntl_event_key": 8,
+        "event_name": "NO_ZERO_PRECIP_FOR_NON_SCAN_ALASKA_SITE",
+        "description_of_event": "No automated zero-precip for Alaska SNOTEL sites."
+    },
+    {
+        "sntl_event_key": 10,
+        "event_name": "VALUE_OUT_OF_RANGE",
+        "description_of_event": "After conversion from an encoded transmission format to binary computer format, the value fails to conform to the rules for the binary range, or is not a number, or the value after conversion exceeds the column width in the target table.  An example would be a encoded transmission value that decoded to be 1023 degrees Fahrenheit while the table column does not allow for temperatures above 999."
+    },
+    {
+        "sntl_event_key": 11,
+        "event_name": "SENSOR_NOT_DEFINED",
+        "description_of_event": "The input record does not match a given site and sensors defined to the database.  Indicates that either the database has the wrong group & channel sensor definitions, or that the site is sending more sensors than are defined in the database for the group."
+    },
+    {
+        "sntl_event_key": 12,
+        "event_name": "SIGHT_RADIO_LOW_BATTERY",
+        "description_of_event": "Low battery message sent by the site radio."
+    },
+    {
+        "sntl_event_key": 13,
+        "event_name": "HYDRAPROBE_SENSOR_MISMATCH",
+        "description_of_event": "All 4 sensor records for a hydraprobe sensor must be defined to use the same equation type.  If not, log this event.  Do not store any data value for the sensor in the sta_obs table."
+    },
+    {
+        "sntl_event_key": 31,
+        "event_name": "STATION_NOT_DEFINED",
+        "description_of_event": "The station received for processing by storage is not defined in the database"
+    },
+    {
+        "sntl_event_key": 32,
+        "event_name": "MASTER_STATION_NOT_DEFINED",
+        "description_of_event": "The master station received for processing by storage is not defined in the database"
+    },
+    {
+        "sntl_event_key": 34,
+        "event_name": "SCHEDULED_FETCH_COMPLETE",
+        "description_of_event": "A scheduled fetch has completed"
+    },
+    {
+        "sntl_event_key": 35,
+        "event_name": "SUB_HOURLY_DATA",
+        "description_of_event": "The station received subhourly data for non-group 16 data not on last hour of year"
+    },
+    {
+        "sntl_event_key": 37,
+        "event_name": "DATA_RING_NOT_FOUND",
+        "description_of_event": "Storage generates a data ring to store DDD data temporarily, which is a file. This event occurs when Storage could not find the file."
+    },
+    {
+        "sntl_event_key": 38,
+        "event_name": "PARSE_ERROR_MASTER",
+        "description_of_event": "A parse error occcurred in master information - station id unknown"
+    },
+    {
+        "sntl_event_key": 42,
+        "event_name": "UNDEFINED_ALARM",
+        "description_of_event": "An undefined catastrophic event"
+    },
+    {
+        "sntl_event_key": 43,
+        "event_name": "UNDEFINED_EVENT",
+        "description_of_event": "An undefined worrisome system event"
+    },
+    {
+        "sntl_event_key": 48,
+        "event_name": "OPENDCS_WARNING",
+        "description_of_event": "WARNING log message from OpenDCS"
+    },
+    {
+        "sntl_event_key": 49,
+        "event_name": "OPENDCS_ERROR",
+        "description_of_event": "FATAL or FAILURE log message from OpenDCS"
+    },
+    {
+        "sntl_event_key": 50,
+        "event_name": "CONNECTION_SUCCESSFUL_TO_LRGS",
+        "description_of_event": "The connection to an external LRGS was successful"
+    }
+]
