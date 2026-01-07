@@ -1,7 +1,7 @@
 import {TabulatorFull as Tabulator} from 'tabulator-tables'
 
 
-class baseTable extends HTMLElement {
+class tableElement extends HTMLElement {
 
     constructor() {
         super()
@@ -15,13 +15,6 @@ class baseTable extends HTMLElement {
             button.addEventListener('click', this.downloadButtonEvent)
         })
         this.querySelector('.reset-table').addEventListener('click', this.resetFilters)
-        // this.eventListernsArray = [
-        //     this.querySelector('#download-csv').addEventListener('click', this.downloadButtonEvent),
-        //     this.querySelector('#download-json').addEventListener('click', this.downloadButtonEvent),
-        //     this.querySelector('#download-xlsx').addEventListener('click', this.downloadButtonEvent),
-        //     this.querySelector('#download-pdf').addEventListener('click', this.downloadButtonEvent),
-        //     this.querySelector('#download-html').addEventListener('click', this.downloadButtonEvent)   
-        // ]
     }
 
     disconnectedCallback() {
@@ -69,34 +62,13 @@ class baseTable extends HTMLElement {
         this.table.download(format, `events_table.${format.toLowerCase()}`)
     }
 
-    buildTable(name, data, customColumns = undefined) {
+    buildTable(name, jsonData, customColumns = undefined) {
         this.querySelector('h2').innerHTML = name
-        // const keys = Object.keys(data[0])
-        // const keySetPairs = keys.map(key => {
-        //     return [key, new Set(data.map(obj => {
-        //         return obj[key]
-        //     }))]
-        // })
-        // const options = new Map(keySetPairs)
-        // console.log(options)
-        // if (!customColumns) {
-        //     const item = data[0]
-        //     customColumns = []
-        //     Object.entries(item).forEach(([key, value]) => {
-        //         if (!this.columnsToFilter.includes(key)) {
-        //             customColumns.push(
-        //                 {title:key, field:key, formatter:"plaintext", headerFilter:"input" }//headerFilterParams:{valuesLookup:true, clearable:true}}
-        //             )
-        //         }
-        //     })
-        // }
-        // console.log('custom columns in build table', customColumns)
-        customColumns = this.columnSettup(customColumns, data)
+        customColumns = this.columnSettup(customColumns, jsonData)
         const rowFormatorFunc = this.rowFormatorFunctionGenerator(customColumns)
-        // console.log('custom columns', customColumns)
         const tableDiv = this.querySelector(`#${this.tableId}`)
         this.table = new Tabulator(tableDiv, {
-            data: data, //assign data to table
+            data: jsonData, 
             rowFormatter: rowFormatorFunc,
             layout:"fitData",
             pagination:"local",
@@ -104,7 +76,6 @@ class baseTable extends HTMLElement {
             paginationSizeSelector:[25, 50, 75, 100],
             movableColumns:true,
             paginationCounter:"rows",
-            // autoColumns:true
             columns: customColumns
         })        
     }
@@ -116,7 +87,6 @@ class baseTable extends HTMLElement {
             return (row) => {
                 const rowData = row.getData()
                 const eventType = rowData['Event Description'] ? rowData['Event Description'] : rowData['Unique Event Descriptions']
-                // console.log(eventType)
                 let stringFromEventDescription
                 if ('object' === typeof eventType) {
                     stringFromEventDescription = eventType.join()
@@ -137,12 +107,8 @@ class baseTable extends HTMLElement {
     columnSettup(customColumnsObj, data) {
         const keys = Object.keys(data[0])
         if (!customColumnsObj) { customColumnsObj = [] }
-        // const dataRow = data[0]
-        const customKeys = customColumnsObj.map(col => col.title)
-        // console.log(customColumnsObj)
-        
+        const customKeys = customColumnsObj.map(col => col.title)   
         const allColumns = new Set(customKeys.concat(keys))
-        // console.log(allColumns)
         const columnObj = []
         allColumns.forEach(key => {
             if(customKeys.includes(key)) {
@@ -164,11 +130,10 @@ class baseTable extends HTMLElement {
                 }
             }
         })
-        // console.log('custom columns obj', columnObj)
         return columnObj
     }
     
 
 }
 
-customElements.define('table-element', baseTable)
+customElements.define('table-element', tableElement)
