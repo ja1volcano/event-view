@@ -3,6 +3,7 @@ import { dataStorage } from '../main'
 import htmlTemplate from './eventTable.html?raw'
 import {TabulatorFull as Tabulator} from 'tabulator-tables'
 import './model'
+import './table'
 import Plotly from 'plotly.js-dist-min'
 import 'tabulator-tables/dist/css/tabulator.min.css'
 import 'fsa-style/dist/css/fsa-style.css'
@@ -28,6 +29,8 @@ export class EventTable extends HTMLElement  {
             this.buildStation30DayAggTable()
             this.buildPlotlyChart()
         }
+        const customElementTable = this.querySelector('#testTable')
+        customElementTable.buildTable('test',dataStorage['event_table'])
     }
 
     buildPlotlyChart() {
@@ -113,7 +116,7 @@ export class EventTable extends HTMLElement  {
             columns:[
                 {title:"Station Name", field:"Station Name", formatter:"plaintext"},
                 {title:"Station ID", field:"Station ID", formatter:"plaintext"},
-           
+                {title:"Station Network", field:"Station Network", formatter:"plaintext"},
                 {title:"Data Collection Office", field:"Data Collection Office", formatter:"plaintext"},
                 {title:"Total Hours of Errors over 30 days", field:"Total Hours of Errors over 30 days", formatter:"plaintext"},
                 {title:"Unique Event Descriptions", field:"Unique Event Descriptions", formatter:"array"},

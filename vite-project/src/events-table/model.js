@@ -112,7 +112,7 @@ export class SubTableDialogeModal extends BaseModal {
     }
 
     connectedCallback() {
-        this.innerModelHTML = this.helpDialogModalHtml()
+        this.innerModelHTML = this.ModalHtml()
         super.connectedCallback()
     }
 
@@ -156,7 +156,7 @@ export class SubTableDialogeModal extends BaseModal {
     }
 
 
-    helpDialogModalHtml() {
+    ModalHtml() {
         return `
         
         <div style="margin: 25px 25px">

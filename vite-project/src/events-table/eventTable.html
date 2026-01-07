@@ -3,17 +3,17 @@
         margin: 100px 100px 100px 100px;
     }
     .station-30day-aggregate-table {
-        height: 800px;
+        height: 80vh;
         width: 100%;
         margin: 10px 10px 10px 10px;
     }
     .station-hour-aggregate-table {
-        height: 800px;
+        height: 80vh;
         width: 100%;
         margin: 10px;
     }
     .event-table {
-        height: 800px;
+        height: 80vh;
         width: 100%;
         margin: 10px;
     }
@@ -24,13 +24,15 @@
 </style>
 
 <div class="container">
+    <table-element id="testTable"></table-element>
     <h1>Events Aggrigate By Station Over 30 days</h1>
     <br>
     <div id="summary-plot"></div>
     <div id="station-30day-aggregate-table" class="station-30day-aggregate-table"></div>
-    <sub-table-dialog-modal></sub-table-dialog-modal>
     <h1>Events Aggrigated by Station per Hour</h1>
     <div id="station-hour-aggregate-table" class="station-hour-aggregate-table"></div>
     <h1>All Events Table</h1>
     <div id="event-table" class="event-table"></div>
+    <sub-table-dialog-modal></sub-table-dialog-modal>
+    
 </div>
