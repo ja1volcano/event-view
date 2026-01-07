@@ -1,6 +1,6 @@
 {
     "Invalid time fields doy" : "Time field is invalid - check GOES string for proper configuration",
-    "Spec says format B but numHours=":"Faild to decode data using Header V1 format",
-    "Bad msg field":"test",
-    "spec says new B format but message contains ASCII chars. Msg skipped.":"Failed to decode message - check raw GOES string (common cause: buffer empty message)"
+    "Spec says format B but numHours=":"Failed applying Header V1, attempting Non-Header V1 (common cause: decoding string doesn't match incoming data)",
+    "spec says new B format but message contains ASCII chars. Msg skipped.":"Failed to decode message - check raw GOES string (common cause: buffer empty message)",
+    "but address is not in the spec list": "Message recieved but no station assigned"
 }

@@ -1401,11 +1401,11 @@
         "goes_id": "DA54AC8C",
         "is_goes_enabled": true,
         "data_to_group_channel": "1,2..12;2,13..24;6,25..30",
-        "midnight_group": "6",
+        "midnight_group": null,
         "lrgs_message_format_cd": "B",
         "is_deleted": false,
-        "last_updated": "2025-09-15T19:22:01.203000",
-        "updated_by": "jkral"
+        "last_updated": "2025-12-19T13:16:30.817000",
+        "updated_by": "fmiller"
     },
     {
         "station_id": 484,
@@ -4275,19 +4275,19 @@
         "midnight_group": null,
         "lrgs_message_format_cd": "B",
         "is_deleted": false,
-        "last_updated": "2024-07-10T13:33:41.547000",
+        "last_updated": "2025-12-12T12:41:43.087000",
         "updated_by": "mcassidy"
     },
     {
         "station_id": 870,
         "goes_id": "DA5EDB4E",
         "is_goes_enabled": true,
-        "data_to_group_channel": "1,2..13;3,14..16;16,17..24",
+        "data_to_group_channel": "1,2..13;3,14..16;16,17..21",
         "midnight_group": null,
         "lrgs_message_format_cd": "B",
         "is_deleted": false,
-        "last_updated": "2022-08-11T10:46:34.813000",
-        "updated_by": "kwetlaufer"
+        "last_updated": "2025-12-12T13:06:32.377000",
+        "updated_by": "kspinelli"
     },
     {
         "station_id": 871,
@@ -4425,11 +4425,11 @@
         "station_id": 897,
         "goes_id": "DA5B49EC",
         "is_goes_enabled": true,
-        "data_to_group_channel": "1,2..10;2,11..22;3,23..34;4,35..42;16,42..51",
+        "data_to_group_channel": "1,2..10;2,11..22;3,23..34;4,35..42;16,43..52",
         "midnight_group": "16",
         "lrgs_message_format_cd": "A",
         "is_deleted": false,
-        "last_updated": "2025-12-05T13:31:04.037000",
+        "last_updated": "2025-12-15T13:04:51.010000",
         "updated_by": "mciupak"
     },
     {
@@ -5041,12 +5041,12 @@
         "station_id": 1011,
         "goes_id": "DA5B5448",
         "is_goes_enabled": true,
-        "data_to_group_channel": "1,2..10;2,11..15;16,16..22",
+        "data_to_group_channel": "1,2..10;2,11..13;3,14..25;4,26..33;16,34..40",
         "midnight_group": "16",
         "lrgs_message_format_cd": "A",
         "is_deleted": false,
-        "last_updated": "2025-02-26T12:46:11.480000",
-        "updated_by": "mwarbritton"
+        "last_updated": "2025-12-12T13:22:00.350000",
+        "updated_by": "mciupak"
     },
     {
         "station_id": 1013,
@@ -5705,8 +5705,8 @@
         "midnight_group": "6",
         "lrgs_message_format_cd": "B",
         "is_deleted": false,
-        "last_updated": "2025-09-15T19:17:22.057000",
-        "updated_by": "jkral"
+        "last_updated": "2026-01-05T13:56:26.610000",
+        "updated_by": "fmiller"
     },
     {
         "station_id": 1145,
@@ -6571,11 +6571,11 @@
         "goes_id": "DA5ACD02",
         "is_goes_enabled": true,
         "data_to_group_channel": "1,2..10;2,11..17;6,18..23",
-        "midnight_group": "6",
+        "midnight_group": null,
         "lrgs_message_format_cd": "B",
         "is_deleted": false,
-        "last_updated": "2025-09-15T19:19:36.097000",
-        "updated_by": "jkral"
+        "last_updated": "2025-12-29T09:50:09.510000",
+        "updated_by": "fmiller"
     },
     {
         "station_id": 1314,
@@ -6757,11 +6757,11 @@
         "station_id": 1337,
         "goes_id": "DA6219BC",
         "is_goes_enabled": true,
-        "data_to_group_channel": "1,2..7;2,7..10;16,11..14",
+        "data_to_group_channel": "1,2..7;2,8..11;16,12..15",
         "midnight_group": "16",
         "lrgs_message_format_cd": "A",
         "is_deleted": false,
-        "last_updated": "2025-12-10T09:12:50.373000",
+        "last_updated": "2025-12-10T13:46:04.747000",
         "updated_by": "mwarbritton"
     },
     {

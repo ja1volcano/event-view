@@ -64,9 +64,10 @@ def build_event_table_df() -> dict[str, pl.DataFrame]:
         ).select(
             pl.col('time_stamp').alias('Date and Time'),
             pl.col('sta_nm').alias('Station Name'),
+            pl.col('station_id').alias('Station ID'),            
             pl.col('ntwk_key').alias('Station Network'),
             pl.col('event_name').alias('Event Name'),
-            pl.col('station_id').alias('Station ID'),
+            pl.col('master_nm').alias('Event Associated Telemetry'),            
             pl.col('dco_cd').alias('Data Collection Office'),
             pl.col('sntl_event_desc').alias('Event Description'),
             pl.col('message').map_elements((lambda x: _get_warning(x))).alias('Error/Warning'),
@@ -87,7 +88,8 @@ def get_station_time_aggregate(df: pl.DataFrame) -> pl.DataFrame:
             pl.len().alias('Event Count'),
             pl.col('Data Collection Office').first(),
             pl.col('Event Name') , #.first().alias('Event Name'),
-            pl.col('Event Description').alias('Event Description'),
+            pl.col('Event Associated Telemetry').unique(), 
+            pl.col('Event Description').unique().alias('Event Description'),
             pl.col('Error/Warning').alias('Error/Warning'),
             pl.col('Detailed Message').alias('Detailed Message'),
             pl.col('GOES ID').first(),
@@ -102,7 +104,8 @@ def group_stations_by_eventhours(df: pl.DataFrame) -> pl.DataFrame:
         pl.col('Station Network').first(),
         pl.col('Station Name').first(),
         pl.col('Data Collection Office').first(),
-        pl.len().alias('Total Hours of Errors over 30 days'),
+        pl.len().alias('Total Hours of Events over 30 days'),
+        pl.col('Event Associated Telemetry').unique(),
         pl.col('Event Description').flatten().unique().alias('Unique Event Descriptions'),
         pl.col('index'),
     )
@@ -113,4 +116,4 @@ if __name__ == "__main__" or __name__ == "builtins" :
     data_dct['aggregate_by_hour_and_station'] = get_station_time_aggregate(data_dct['events_table'])
     data_dct['station_events_over_30_days'] = group_stations_by_eventhours(data_dct['aggregate_by_hour_and_station'])
     for key, df in data_dct.items():
-        export_results(df, f'./vite-project/public/{key}.json')
+        export_results(df, f'./public/{key}.json')

@@ -130,29 +130,32 @@ export class SubTableDialogeModal extends BaseModal {
 
 
     buildSubTable(data) {
-        this.querySelector('h1').innerHTML = data[0]['Station Name']
-        var table = new Tabulator(this.querySelector('#sub-table'), {
-            data: data, //assign data to table
-            height: "80vh",
-            layout:"fitColumns",
-            pagination:"local",
-            paginationSize:25,
-            paginationSizeSelector:[25, 50, 75, 100],
-            movableColumns:true,
-            paginationCounter:"rows",
-            autoColumns:true
-            // columns:[
-            //     {title:"Station Name", field:"Station Name", formatter:"plaintext"},
-            //     {title:"Station ID", field:"Station ID", formatter:"plaintext"},
+        const name = data[0]['Station Name'] ? `Station ${data[0]['Station Name']}` : 'AWDB'
+        this.querySelector('h1').innerHTML =   `Events for ${name}`
+        const modelTable = this.querySelector('#sub-table')
+        modelTable.buildTable('Event table:', data)
+        // var table = new Tabulator(this.querySelector('#sub-table'), {
+        //     data: data, //assign data to table
+        //     height: "80vh",
+        //     layout:"fitColumns",
+        //     pagination:"local",
+        //     paginationSize:25,
+        //     paginationSizeSelector:[25, 50, 75, 100],
+        //     movableColumns:true,
+        //     paginationCounter:"rows",
+        //     autoColumns:true
+        //     // columns:[
+        //     //     {title:"Station Name", field:"Station Name", formatter:"plaintext"},
+        //     //     {title:"Station ID", field:"Station ID", formatter:"plaintext"},
            
-            //     {title:"Data Collection Office", field:"Data Collection Office", formatter:"plaintext"},
-            //     {title:"Total Hours of Errors over 30 days", field:"Total Hours of Errors over 30 days", formatter:"plaintext"},
-            //     {title:"Unique Event Descriptions", field:"Unique Event Descriptions", formatter:"array"},
-            //     {title:"Show Events",formatter:button, hozAlign:"center", cellClick:this.showDetailsButton.bind(null, dataStorage['event_table'], arrayOfEvents)}, 
-            // ]
+        //     //     {title:"Data Collection Office", field:"Data Collection Office", formatter:"plaintext"},
+        //     //     {title:"Total Hours of Errors over 30 days", field:"Total Hours of Errors over 30 days", formatter:"plaintext"},
+        //     //     {title:"Unique Event Descriptions", field:"Unique Event Descriptions", formatter:"array"},
+        //     //     {title:"Show Events",formatter:button, hozAlign:"center", cellClick:this.showDetailsButton.bind(null, dataStorage['event_table'], arrayOfEvents)}, 
+        //     // ]
 
-        })
-        this.table = table
+        // })
+        this.table = modelTable
     }
 
 
@@ -160,9 +163,8 @@ export class SubTableDialogeModal extends BaseModal {
         return `
         
         <div style="margin: 25px 25px">
-            <h1 style="text-align: center;">Events for Station</h1>
-            <br>
-            <div id="sub-table"></div>
+            <h1 style="text-align: center;"></h1>
+            <table-element id="sub-table"></table-element>
         </div>
         `
     }

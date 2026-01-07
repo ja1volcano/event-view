@@ -16,7 +16,7 @@ async function loadData() {
     ]
 
     const results = await Promise.all(promises)
-    console.log(results)
+    // console.log(results)
     dataStorage['event_table'] = results[0]
     dataStorage['aggregate_by_hour_and_station']  = results[1]
     dataStorage['station_events_over_30_days']= results[2]
